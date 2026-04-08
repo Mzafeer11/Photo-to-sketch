@@ -1,9 +1,14 @@
-✏️ Unpaired Image Translation with CycleGAN
+✏️ Bridging the Domain Gap: Photo-to-Sketch with CycleGAN
 
-How do you teach a machine to draw sketches without having a paired dataset for every photo? Enter CycleGAN.
+How do you translate images between domains when you don't have paired data? My latest project implements CycleGAN on the "Sketchy" dataset to automate realistic sketch generation from photos.
 
-My latest project uses Cycle-Consistency Loss to learn a mapping between photos and hand-drawn sketches. It's a robust solution for style transfer tasks where paired data is hard to come by.
+Key Engineering Highlights:
+🔹 Cycle-Consistency Loss: Enforced that translating a photo to a sketch and back result in the original image, preventing mode collapse in unpaired sets.
+🔹 ResNet-9 Architecture: Utilized a deep 9-block ResNet Generator to handle complex style transformations while preserving global object geometry.
+🔹 Identity Mapping: Integrated an Identity Loss term to maintain consistency when the input image already shares characteristics with the target domain.
 
-Explore the modular implementation: https://github.com/Mzafeer11/Photo-to-sketch
+The repository includes a fully modularized training script with automated checkpointing and mixed-precision support.
 
-#CycleGAN #MachineLearning #PyTorch #ComputerVision #GenerativeAI
+Explore the code: https://github.com/Mzafeer11/Photo-to-sketch
+
+#CycleGAN #ComputerVision #DeepLearning #GenerativeAI #PyTorch #DataScience
