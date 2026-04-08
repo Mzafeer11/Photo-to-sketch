@@ -6,18 +6,18 @@ from train_cyclegan import CycleGANTrainer
 import os
 
 # Configuration
-BATCH_SIZE = 1
+BATCH_SIZE = 4
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 CHECKPOINT_DIR = '/kaggle/working/checkpoints'
-DATA_ROOT_A = "Sketchy/sketch"
-DATA_ROOT_B = "Sketchy/photo"
+DATA_ROOT_A = "sketchy/sketchy/sketches"
+DATA_ROOT_B = "sketchy/sketchy/photos"
 
 os.makedirs(CHECKPOINT_DIR, exist_ok=True)
 
 def train_cyclegan(epochs=10):
-    # Transforms
+    # Transforms (Updated to 128x128 for Kaggle T4 performance)
     transform = transforms.Compose([
-        transforms.Resize((256, 256)),
+        transforms.Resize((128, 128)),
         transforms.ToTensor(),
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
