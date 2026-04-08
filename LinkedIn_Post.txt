@@ -1,0 +1,9 @@
+✏️ Unpaired Image Translation with CycleGAN
+
+How do you teach a machine to draw sketches without having a paired dataset for every photo? Enter CycleGAN.
+
+My latest project uses Cycle-Consistency Loss to learn a mapping between photos and hand-drawn sketches. It's a robust solution for style transfer tasks where paired data is hard to come by.
+
+Explore the modular implementation: https://github.com/Mzafeer11/Photo-to-sketch
+
+#CycleGAN #MachineLearning #PyTorch #ComputerVision #GenerativeAI
